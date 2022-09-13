@@ -1,0 +1,18 @@
+{
+  "name": "Blur your page",
+  "description": "It's a simple extension to make your page blurry for the reasons.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "icons": {
+    "16": "./32x32.png",
+    "32": "./32x32.png",
+    "48": "./32x32.png",
+    "128": "./32x32.png"
+  },
+  "permissions": ["tabs", "scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"]
+}
