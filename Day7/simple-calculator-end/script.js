@@ -24,12 +24,14 @@ function handleBtnClick(e) {
       return;
     }
     displayBar.value += e.target.textContent;
-    currentResult = displayBar.value;
   }
 
   // 處理清除按鈕
   if (e.target.classList.contains("clear")) {
     displayBar.value = 0;
+    previousResult = "";
+    operatorClicked = false;
+    operator = null;
   }
 
   // 處理運算符
@@ -47,6 +49,7 @@ function handleBtnClick(e) {
     );
     previousResult = "";
     operatorClicked = false;
+    operator = null;
   }
 }
 
