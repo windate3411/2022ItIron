@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Exchanger</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sub-title">1新台幣 等於</div>
+      <div class="title">4.57日圓</div>
+      <div class="date">9月21日 上午1:59 [UTC]</div>
+      <div class="input-wrapper">
+        <input type="number" id="fromInput" />
+        <select name="from" id="fromSelect" disabled>
+          <option value="TWD">新台幣</option>
+        </select>
+      </div>
+      <div class="input-wrapper">
+        <input type="number" id="toInput" />
+        <select name="to" id="toSelect" disabled>
+          <option value="JPY">日圓</option>
+        </select>
+      </div>
+    </div>
+  </body>
+</html>
