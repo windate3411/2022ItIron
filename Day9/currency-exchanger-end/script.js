@@ -1,10 +1,17 @@
+// 選取顯示匯率、日期的元素
 const title = document.querySelector(".title");
 const subTitle = document.querySelector(".sub-title");
 const date = document.querySelector(".date");
+
+// 選取Select選單元素
 const fromSelect = document.querySelector("#fromSelect");
 const toSelect = document.querySelector("#toSelect");
+
+// 選取Input欄位元素
 const fromInput = document.querySelector("#fromInput");
 const toInput = document.querySelector("#toInput");
+
+// 建立匯率物件
 const rateMapping = {};
 
 fetchCurrencyData();
@@ -30,5 +37,8 @@ fromInput.addEventListener("input", (e) => {
 });
 
 toInput.addEventListener("input", (e) => {
-  fromInput.value = formatValue(e.target.value, rateMapping[fromSelect.value]);
+  fromInput.value = formatValue(
+    e.target.value,
+    (1 / rateMapping[toSelect.value]).toFixed(2)
+  );
 });
