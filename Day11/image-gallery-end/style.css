@@ -26,14 +26,14 @@ body {
   height: 100%;
   width: 100%;
   overflow-x: auto;
-  /* scroll-snap-type: x mandatory; */
+  scroll-snap-type: x mandatory;
   display: flex;
 }
 
 img {
   width: 100%;
   flex-shrink: 0;
-  /* scroll-snap-align: center; */
+  scroll-snap-align: center;
 }
 
 .indicators {
