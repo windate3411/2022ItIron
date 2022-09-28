@@ -7,7 +7,6 @@ const endgameEl = document.getElementById("end-game-container");
 const finalScoreEL = document.getElementById("final-score");
 const restartBtn = document.getElementById("restart-btn");
 const settingBtn = document.getElementById("setting-btn");
-const settingForm = document.getElementById("setting-form");
 const setting = document.getElementById("setting");
 const difficultySelect = document.getElementById("difficulty");
 
@@ -49,10 +48,7 @@ let difficulty =
     : localStorage.getItem("difficulty");
 
 // set diffculty value
-difficultySelect.value =
-  localStorage.getItem("difficulty") === null
-    ? "medium"
-    : localStorage.getItem("difficulty");
+difficultySelect.value = difficulty;
 
 // focus text on start
 inputEl.focus();
@@ -124,7 +120,7 @@ settingBtn.addEventListener("click", () => {
 });
 
 // difficulty setting
-settingForm.addEventListener("change", (e) => {
+difficultySelect.addEventListener("change", (e) => {
   difficulty = e.target.value;
   localStorage.setItem("difficulty", difficulty);
 });
