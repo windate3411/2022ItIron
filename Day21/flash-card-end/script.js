@@ -25,10 +25,14 @@ const dummyData = [
   },
 ];
 
+// store DOM Cards
+const cardsEl = [];
+
 // store card data
 const cardsData = getCardData();
 
 // create all cards
+
 function createCards() {
   cardsData.forEach((item, index) => {
     createCard(item, index);
@@ -59,7 +63,17 @@ function createCard(data, index) {
     card.classList.toggle("show-answer");
   });
 
+  // add to DOM cards
+  // cardsEl.push(card);
+
   cardsContainer.appendChild(card);
+
+  // updateCurrentText();
+}
+
+// show number of cards
+function updateCurrentText() {
+  currentEl.innerText = `${currentActiveCard + 1}/${cardsEl.length}`;
 }
 
 // get card data from local storage
@@ -105,4 +119,29 @@ addCardBtn.addEventListener("click", () => {
   }
 });
 
+// listeners for navigation
+
+nextBtn.addEventListener("click", () => {
+  cardsEl[currentActiveCard].className = "card left";
+  currentActiveCard++;
+
+  if (currentActiveCard > cardsEl.length - 1) {
+    currentActiveCard = cardsEl.length - 1;
+  }
+  cardsEl[currentActiveCard].className = "card active";
+  updateCurrentText();
+});
+
+prevBtn.addEventListener("click", () => {
+  cardsEl[currentActiveCard].className = "card";
+  currentActiveCard--;
+
+  if (currentActiveCard < 0) {
+    currentActiveCard = 0;
+  }
+  cardsEl[currentActiveCard].className = "card active";
+  updateCurrentText();
+});
+
+// localStorage.setItem("cards", JSON.stringify(dummyData));
 createCards();
