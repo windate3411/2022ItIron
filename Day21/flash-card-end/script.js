@@ -64,11 +64,12 @@ function createCard(data, index) {
   });
 
   // add to DOM cards
-  // cardsEl.push(card);
+  cardsEl.push(card);
+  console.log("the card elements are", cardsEl);
 
   cardsContainer.appendChild(card);
 
-  // updateCurrentText();
+  updateCurrentText();
 }
 
 // show number of cards
@@ -120,7 +121,6 @@ addCardBtn.addEventListener("click", () => {
 });
 
 // listeners for navigation
-
 nextBtn.addEventListener("click", () => {
   cardsEl[currentActiveCard].className = "card left";
   currentActiveCard++;
@@ -143,5 +143,5 @@ prevBtn.addEventListener("click", () => {
   updateCurrentText();
 });
 
-// localStorage.setItem("cards", JSON.stringify(dummyData));
+localStorage.setItem("cards", JSON.stringify(dummyData));
 createCards();
