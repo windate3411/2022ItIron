@@ -65,7 +65,6 @@ function createCard(data, index) {
 
   // add to DOM cards
   cardsEl.push(card);
-  console.log("the card elements are", cardsEl);
 
   cardsContainer.appendChild(card);
 
