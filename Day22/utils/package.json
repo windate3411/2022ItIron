@@ -1,0 +1,17 @@
+{
+  "name": "@windate3411/utils-demo",
+  "version": "1.0.0",
+  "description": "Is's a demo package that consist of some useful functions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utils",
+    "snakify",
+    "camelize",
+    "isObject"
+  ],
+  "author": "windate3411",
+  "license": "ISC"
+}
